@@ -34,7 +34,7 @@ class ImagenesController
         $isbn = $request->get('isbn');
         $libro = $this->LibrosRepository->findOneBy(['isbn' => $isbn]);
 
-        //return new JsonResponse(['status' => 'Imagen anyadida!'], Response::HTTP_CREATED);
+        //return new JsonResponse(['status' => 'Imagen agregada!'], Response::HTTP_CREATED);
         
         foreach($request->files as $uploadedFile) {
             $name = $uploadedFile->getClientOriginalName();
@@ -48,7 +48,7 @@ class ImagenesController
         $libro ->setImagenes($id);
         $addImg = $this->LibrosRepository->saveImgToLibro( $libro );
 
-        return new JsonResponse(['status' => 'Imagen anyadida!'], Response::HTTP_CREATED);
+        return new JsonResponse(['status' => 'Imagen agregada!'], Response::HTTP_CREATED);
 
     }
 

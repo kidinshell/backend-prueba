@@ -71,7 +71,7 @@ class LibrosController
 
         $this->LibrosRepository->saveLibro($isbn, $title, $subtitle, $author, $published, $publisher, $pages, $description, $category, $website );
 
-        $response = new JsonResponse(['status' => 'Libro agregado!'], Response::HTTP_CREATED);       
+        $response = new JsonResponse(['status' => 'Libro Agregado'], Response::HTTP_CREATED);       
         $response->headers->set('Access-Control-Allow-Origin', '*');
         return $response;
     }
@@ -93,6 +93,7 @@ class LibrosController
             'pages' => $libro->getPages(),
             'description' => $libro->getDescription(),
             'category' => $libro->getCategory(),
+            'website' => $libro->getWebsite(),
             'imagenes' => $libro->getImagenes(),
 
         ];

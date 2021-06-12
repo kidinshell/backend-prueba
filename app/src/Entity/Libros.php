@@ -172,7 +172,7 @@ class Libros
 
     public function getWebsite(): ?string
     {
-        return $website->website;
+        return $this->website;
     }
 
     public function setWebsite(?string $website): self
